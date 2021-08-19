@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LNPPRlv6cHzBFgnQi2u0QVIQIxAxg61IoNqW6WJs0ADdb5dVTm3r6V7i7rB7vW011EB2h0tESEJObzqIh+oAJg==",
+  "dgSpecHash": "xs9i+EIJCd5gqzzRXwvuMehftxRpIciR7ZA29ah4n6WG2hO2W1n2F+EBJ/bXHXwEius3+vrYMVXmKA4j2/AGSg==",
   "success": true,
   "projectFilePath": "C:\\Source\\talks\\cloudskwela2021\\src\\shared\\shared.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\md\\.nuget\\packages\\microsoft.azure.webjobs.extensions.storage\\3.0.4\\microsoft.azure.webjobs.extensions.storage.3.0.4.nupkg.sha512",
     "C:\\Users\\md\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Users\\md\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
+    "C:\\Users\\md\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\md\\.nuget\\packages\\microsoft.extensions.configuration\\2.1.0\\microsoft.extensions.configuration.2.1.0.nupkg.sha512",
     "C:\\Users\\md\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.1.0\\microsoft.extensions.configuration.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\md\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.1.0\\microsoft.extensions.configuration.binder.2.1.0.nupkg.sha512",

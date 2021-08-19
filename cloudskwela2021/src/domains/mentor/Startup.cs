@@ -26,7 +26,7 @@ namespace mentor
             var config = configBuilder.Build();
 
             configBuilder.AddAzureKeyVault(
-                $"https://{config["AzureKeyVault:VaultName"]}.vault.azure.net/"
+                $"https://eturokeyv.vault.azure.net/"
             );
 
             config = configBuilder.Build();
