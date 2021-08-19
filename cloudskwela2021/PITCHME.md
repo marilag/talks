@@ -20,10 +20,10 @@ Twitter: @marilag
 
 ---
 <!-- class:  gaia -->
-# Agenda
-- Arkitektura ng Cloud Application
+# Layunin
+- Arkitektura ng Cloud Application  
 - Ano ang event-driven design
-- Paano magbuo ng isang cloud application 
+- Halimbawa ng pagbuo ng isang cloud application 
 
 ---
 
@@ -39,9 +39,7 @@ Twitter: @marilag
 
 ---
 
-# Alamin  ang mga sumusunod
-
-Solution:
+# Alamin ang Solution
 
 - Anong gamit ng app
 - Sino, ilan at nasaan ang mga users
@@ -53,9 +51,7 @@ Solution:
 ---
 <!-- class:   gaia -->
 
-# Alamin  ang mga sumusunod
-
-Cost Optimization:
+# Alamin Cost Optimization:
 
 - Magkano ang budget sa MVP
 - Magkano ang budget sa developers at sa infrastructure
@@ -64,9 +60,7 @@ Cost Optimization:
 - Ano ang growth plan ng project
   
 ---
-# Alamin  ang mga sumusunod
-
-Operational Excellence:
+# Alamin ang Operational Excellence:
 
 - Ilan ang engineers at anong skills nila
 - Anong gagamitin na source repository 
@@ -76,18 +70,14 @@ Operational Excellence:
 - Anong gagawin pag nagkaroon ng problema
 
 ---
-# Alamin  ang mga sumusunod
-
-Performance:
+# Alamin ang Performance
 
 - Gaano dapat kabilis ang response time sa normal period
 - Gaano dapat kabilis sa peak period
 - Anong data ang pwedeng i-cache
 
 ---
-# Alamin  ang mga sumusunod
-
-Reliability:
+# Alamin  ang Reliability:
 
 - Gaano katagal o kadalas pwede magdown (RTO)
 - Gaano kadaming data ang pwedeng mawala (RPO)
@@ -97,9 +87,7 @@ Reliability:
 - Anong gagawin ng app pag nagka error sa gitna ng mahabang logic
 
 ---
-# Alamin  ang mga sumusunod
-
-Security:
+# Alamin ang Security
 
 - Sinong pwede makaaccess ng infrastructure sa bawat environment
 - Paano isetup ang network para ma control ang access sa bawat infrastructure
@@ -109,25 +97,39 @@ Security:
 - Anong gamit na Identity Management at RBAC para makalogin ang users
 - Saan ilalagay ang lahat ng data
 
+---
+<!-- class:  lead gaia -->
+
+# Halimbawa : Eturo 
+
 
 ---
 <!-- class:   gaia -->
 
-# Halimbawa : Eturo 
-- Anong gamit ng app
-  - portal para sa mga mentors at mentee
+# Eturo 
+- Anong gamit ng app? Portal para sa mga mentors at mentee
 - Sino, ilan at nasaan ang mga users
   - MVP: 10 mentees, 3 mentors, 1 city 
   - Year 1: 10k mentees, 150 mentors, 3 countries
 - Anong timeline ng MVP at ng buong project
   - 6 months MVP, 2 years scale-up
 - Anong tech stack ang dapat gamitin
-    
+  - Containers + Serverless, .Net, C#, CosmosDB, Messaging    
 ---
 
-<!-- class:   gaia -->
+# Patterns at Frameworks? 
 
-# Ano ang Event-Driven Design
+- Domain Driven Design
+- Event Driven Architecture
+- 
+
+---
+<!-- class: lead  gaia -->
+
+# Ano ang Event-Driven 
+
+---
+
 
 
 

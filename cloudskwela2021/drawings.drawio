@@ -1,0 +1,32 @@
+<mxfile host="65bd71144e">
+    <diagram id="X-WBJx_Xs6kYIEa8Dv_k" name="Domain Model">
+        <mxGraphModel dx="1286" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="DjLF8lStdRpm8chsS5JS-2" value="Mentor" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="210" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="DjLF8lStdRpm8chsS5JS-3" value="Mentee" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="210" width="120" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="p576Q6-eymrzqFJpBc2p" name="Solution Architecture">
+        <mxGraphModel dx="1286" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="CXf4QesW4-jmHsShdtY_-0"/>
+                <mxCell id="CXf4QesW4-jmHsShdtY_-1" parent="CXf4QesW4-jmHsShdtY_-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="ir8c-DlZ6llXdp240Ja5" name="Event Model">
+        <mxGraphModel dx="1286" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="B10wJtRPMMjHwSIE0qdp-0"/>
+                <mxCell id="B10wJtRPMMjHwSIE0qdp-1" parent="B10wJtRPMMjHwSIE0qdp-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
