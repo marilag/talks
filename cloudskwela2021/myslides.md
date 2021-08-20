@@ -1,18 +1,17 @@
 ---
 marp: true
-theme: gaia
-class:
-  - lead
+
 ---
 
 # Cloudskwela 2021
 
-Event Driven Application with Azure Well Architected Framework
+Azure Well Architected Framework at Event-Driven Design
 
 ---
 
 # Ako po  si Marilag Dimatulac
 Founder at Chief Architect ng Dewise
+Founder ng ulap.org
 Organizer ng Azure User Group Manila at Denmark
 Microsoft MVP sa Azure
 
@@ -39,19 +38,19 @@ Twitter: @marilag
 
 ---
 
-# Alamin ang Solution
+## Mga dapat alamin sa produkto
 
-- Anong gamit ng app
-- Sino, ilan at nasaan ang mga users
-- Anong timeline ng MVP at ng buong project
-- Anong tech stack ang dapat gamitin
+:white_check_mark: Anong gamit ng applikation
+:white_check_mark: Sino, ilan at nasaan ang mga users
+:white_check_mark: Anong timeline ng MVP at ng buong project
+:white_check_mark: Anong tech stack ang dapat gamitin
 
   
   
 ---
 <!-- class:   gaia -->
 
-# Alamin Cost Optimization:
+## Mga dapat alamin para sa Cost Optimization:
 
 - Magkano ang budget sa MVP
 - Magkano ang budget sa developers at sa infrastructure
@@ -60,14 +59,13 @@ Twitter: @marilag
 - Ano ang growth plan ng project
   
 ---
-# Alamin ang Operational Excellence:
+## Mga dapat alamin para sa Operational Excellence:
 
-- Ilan ang engineers at anong skills nila
-- Anong gagamitin na source repository 
+- Ilan ang engineers at anong skills meron at kailangan 
 - Paano magdeploy ng code at ng infrastructure  
-- Paanong magkaaccess sa mga environments
+- Paano magkaaccess sa mga environments
 - Anong mga metrics ang kailangan masubaybayan
-- Anong gagawin pag nagkaroon ng problema
+- Anong gagawin pag nagkaroon ng problema sa production
 
 ---
 # Alamin ang Performance
@@ -100,13 +98,13 @@ Twitter: @marilag
 ---
 <!-- class:  lead gaia -->
 
-# Halimbawa : Eturo 
+# Halimbawa : Etro 
 
 
 ---
 <!-- class:   gaia -->
 
-# Eturo 
+# Etro 
 - Anong gamit ng app? 
   - Portal para sa mga mentors at mentee
 - Sino, ilan at nasaan ang mga users
