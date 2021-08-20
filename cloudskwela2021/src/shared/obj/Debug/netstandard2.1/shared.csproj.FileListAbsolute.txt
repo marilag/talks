@@ -9,3 +9,8 @@ C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.cspro
 C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.dll
 C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.pdb
 C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.csprojAssemblyReference.cache
+C:\Source\talks\cloudskwela2021\src\domains\mentor\bin\output\Microsoft.Azure.Cosmos.ServiceInterop.dll
+C:\Source\talks\cloudskwela2021\src\domains\mentor\bin\output\Cosmos.CRTCompat.dll
+C:\Source\talks\cloudskwela2021\src\domains\mentor\bin\output\shared.deps.json
+C:\Source\talks\cloudskwela2021\src\domains\mentor\bin\output\shared.dll
+C:\Source\talks\cloudskwela2021\src\domains\mentor\bin\output\shared.pdb

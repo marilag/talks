@@ -51,7 +51,7 @@
           "dependencies": {
             "Microsoft.Azure.Cosmos": {
               "target": "Package",
-              "version": "[3.20.1, )"
+              "version": "[3.7.0, )"
             },
             "Microsoft.Azure.WebJobs.Extensions.EventGrid": {
               "target": "Package",
