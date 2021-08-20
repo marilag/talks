@@ -125,7 +125,7 @@ Twitter: @marilag
 - CQRS
 - Message Brokering
 - Events Publishing / Subscription 
-- Event Modeling
+- [Event Modeling](https://eventmodeling.org/posts/what-is-event-modeling/)
 
 ---
 <!-- class: lead  gaia -->
@@ -141,6 +141,10 @@ Twitter: @marilag
 - Paghandaan ang bawat proyekto gamit ang Azure Well Architected Framework
 - Huwag malunod sa patterns
 - Bawat problema ay magkakaiba
+
+---
+# Resources
+[Event Model](https://eventmodeling.org/posts/what-is-event-modeling/)
 
 
   
