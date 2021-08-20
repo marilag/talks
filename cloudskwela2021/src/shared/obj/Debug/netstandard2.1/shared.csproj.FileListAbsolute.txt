@@ -8,3 +8,4 @@ C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.Assem
 C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.csproj.CoreCompileInputs.cache
 C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.dll
 C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.pdb
+C:\Source\talks\cloudskwela2021\src\shared\obj\Debug\netstandard2.1\shared.csprojAssemblyReference.cache

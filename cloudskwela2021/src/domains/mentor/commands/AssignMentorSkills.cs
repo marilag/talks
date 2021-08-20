@@ -5,9 +5,9 @@ using System.Text;
 
 namespace mentor.commands
 {
-    public class AssignSkills : IRequest
+    public class AssignMentorSkills : IRequest
     {
-        public string Id { get; set; }
+        public string MentorCode { get; set; }
         public string[] Skills { get; set; }
     }
 }

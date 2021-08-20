@@ -17,9 +17,9 @@ namespace mentor.events
         }
         public async Task Handle(MentorCreated notification, CancellationToken cancellationToken)
         {
-            var command = new AssignSkills()
+            var command = new AssignMentorSkills()
             {
-                Id = notification.Id,
+                MentorCode = notification.MessageData.MentorCode,                
                 Skills = notification.MessageData.Skills
 
             };

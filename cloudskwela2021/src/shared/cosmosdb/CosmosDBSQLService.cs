@@ -50,7 +50,7 @@ namespace shared
 
         public async Task<Container> GetOrCreateContainerAsync(string container, string partitionPath)
         {
-            cosmosDatabase = await _client.CreateDatabaseIfNotExistsAsync(_options.Database, _options.DefaultRU);
+            cosmosDatabase = await _client.CreateDatabaseIfNotExistsAsync(_options.Database);
 
             ContainerProperties containerProperties = new ContainerProperties(id: container, partitionKeyPath: partitionPath);
 
