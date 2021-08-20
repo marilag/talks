@@ -152,7 +152,7 @@ marp: true
   
 - [Mediatr](https://github.com/jbogard/MediatR)
   
-- [Talk resources on Github](https://github.com/marilag/talks/tree/main/cloudskwela2021)
+- [Source code sa Github](https://github.com/marilag/talks/tree/main/cloudskwela2021)
 
 
   
