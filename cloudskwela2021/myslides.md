@@ -13,8 +13,7 @@ marp: true
 :cloud: Founder ng ulap.org
 :green_heart: Organizer ng Azure User Group MNL at DK
 :computer: Microsoft MVP sa Azure
-
-Twitter: @marilag
+:iphone: Twitter: @marilag
 
 ---
 <!--  _backgroundColor: white -->
@@ -25,7 +24,7 @@ Twitter: @marilag
 # Layunin
 - Arkitektura ng Cloud Application  
 - Ano ang event-driven design
-- Halimbawa ng pagbuo ng isang cloud application 
+- Halimbawa ng pagdesineyo at pagbuo ng cloud application 
 
 ---
 
@@ -99,6 +98,16 @@ Twitter: @marilag
   :white_check_mark: Saan ilalagay ang lahat ng data
 
 ---
+
+# Mga patterns na may kaugnayan sa Event-Driven Application
+
+- Domain Driven Design
+- Microservices
+- CQRS
+- Message Brokering
+- Events Publishing / Subscription 
+- Event Modeling
+---
 <!-- class:  lead gaia -->
 
 # Halimbawa : Etro App
@@ -116,35 +125,34 @@ Twitter: @marilag
   - 6 months MVP, 2 years scale-up
 - Anong tech stack ang dapat gamitin
   - Containers + Serverless, .Net, C#, CosmosDB, Messaging    
----
-
-# Mga paraan na may kaugnayan sa pagdisenyo ng Event-Driven Application
-
-- Domain Driven Design
-- Microservices
-- CQRS
-- Message Brokering
-- Events Publishing / Subscription 
-- [Event Modeling](https://eventmodeling.org/posts/what-is-event-modeling/)
 
 ---
 <!-- class: lead  gaia -->
 
-# Demo: Event-Driven gamit ang mga sumusunod
+# Demo
 - .Net Core at Azure Functions para sa mga APIs
 - Mediator pattern para sa in-process message brokering
-- Storage queues para sa remote message brokering
 - Event grid para sa pub/sub event routing
+- Storage queues para sa remote message brokering
 ---
 
 # Mga dapat tandaan
 - Paghandaan ang bawat proyekto gamit ang Azure Well Architected Framework
 - Huwag malunod sa patterns
-- Bawat problema ay magkakaiba
+- Bawat problema ay magkakaiba, magsimula sa simpleng disenyo
 
 ---
 # Resources
-[Event Model](https://eventmodeling.org/posts/what-is-event-modeling/)
+- [Azure Well Architected Framework](https://docs.microsoft.com/en-us/azure/architecture/framework/)
+- [Microsoft Learn - Messaging and Serverless](https://docs.microsoft.com/en-us/learn/paths/architect-messaging-serverless/)
+
+- [Designing DDD oriented Microservice](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice)
+
+- [Event Modeling](https://eventmodeling.org/posts/what-is-event-modeling/)
+  
+- [Mediatr](https://github.com/jbogard/MediatR)
+  
+- [Talk resources on Github](https://github.com/marilag/talks/tree/main/cloudskwela2021)
 
 
   
