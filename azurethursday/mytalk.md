@@ -25,3 +25,9 @@ Part 2 - Demo:
 - Out-of-process messaging with Queues 
 - Pub/Sub pattern using event grid and queues
 
+## Bio
+
+Marilag is a tech community leader who aims to bridge the skill gap through equal distribution of knowledge across borders, cultures & individuals. Her deep technical knowledge in Cloud and Software Engineering, combined with her relentless passion for mentorship and developer wellness, drive her to tackle the tech upskilling challenge, through her advocacy. She’s the organizer of Azure User Group Manila and AZUGDK, an Azure MVP and the co-founder of a not-for-profit group called Ulap.org. She also the tech entrepreneur behind Dewise, a cloud development company based in Copenhagen and Manila
+
+![Pic](../cloudskwela2021/Marilag.jpg)
+
