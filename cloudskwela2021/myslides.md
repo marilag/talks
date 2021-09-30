@@ -98,6 +98,8 @@ marp: true
   :white_check_mark: Saan ilalagay ang lahat ng data
 
 ---
+# Ano ang Event-Driven Application?
+---
 
 # Mga patterns na may kaugnayan sa Event-Driven Application
 

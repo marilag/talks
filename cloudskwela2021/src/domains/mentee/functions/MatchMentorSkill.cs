@@ -11,7 +11,7 @@ namespace mentee.functions
         [FunctionName("MatchMentorSkill")]
         public void Run([QueueTrigger("matchskillsqueue", Connection = "MatchMentorSkillQueue")]string myQueueItem, ILogger log)
         {
-            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+            log.LogInformation($"Yay nakuha ko na ang message: {myQueueItem}");
         }
     }
 }
