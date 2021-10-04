@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace passthemessage
 {
-    public static class PostGossip
+    public static class StorageQueueProducer
     {
         [FunctionName("gossip")]
         public static async Task<IActionResult> Run(
@@ -28,7 +28,7 @@ namespace passthemessage
 
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            StorageQueue.SendMessageToStorageQueue(config["StorageQueueConnectionString"], requestBody);
+            StorageQueueInfra.SendMessageToStorageQueue(config["StorageQueueConnectionString"], requestBody);
             return new OkResult();
 
         }

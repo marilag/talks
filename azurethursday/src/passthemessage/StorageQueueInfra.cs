@@ -6,7 +6,7 @@ using System.Text;
 
 namespace passthemessage
 {
-    public static class StorageQueue
+    public static class StorageQueueInfra
     {
         private const string QueueName = "gossips"; 
         

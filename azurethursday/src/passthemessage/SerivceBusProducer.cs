@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace passthemessage
 {
-    public static class PostGossipFIFO
+    public static class SerivceBusProducer
     {
         [FunctionName("gossipfifo")]
         public static async Task<IActionResult> Run(
@@ -19,16 +19,9 @@ namespace passthemessage
             ExecutionContext context,
             ILogger log)
         {
-           
-            var config = new ConfigurationBuilder()
-           .SetBasePath(context.FunctionAppDirectory)
-           .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
-           .AddEnvironmentVariables()
-           .Build();
-
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            ServiceBus.SendMessageFIFO(context.InvocationId.ToString(),requestBody);
+            ServiceBusInfra.SendMessageFIFO(context.InvocationId.ToString(),requestBody);
             return new OkResult();
         }
 
@@ -40,34 +33,45 @@ namespace passthemessage
             ILogger log)
         {
 
-            var config = new ConfigurationBuilder()
-           .SetBasePath(context.FunctionAppDirectory)
-           .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
-           .AddEnvironmentVariables()
-           .Build();
-
-
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            ServiceBus.SendMessageRandom(requestBody);
+            ServiceBusInfra.SendMessageRandom(requestBody);
             return new OkResult();
         }
 
-         [FunctionName("gossipbatch")]
+        [FunctionName("gossipbatch")]
         public static async Task<IActionResult> gossipbatch(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ExecutionContext context,
             ILogger log)
         {
 
-            var config = new ConfigurationBuilder()
-           .SetBasePath(context.FunctionAppDirectory)
-           .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
-           .AddEnvironmentVariables()
-           .Build();
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            ServiceBusInfra.SendBatchMessageFIFO(context.InvocationId.ToString(),requestBody);
+            return new OkResult();
+        }
+
+        [FunctionName("gossiptransaction")]
+        public static async Task<IActionResult> gossiptransaction(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            ExecutionContext context,
+            ILogger log)
+        {
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            ServiceBusInfra.SendMessageTransaction(context.InvocationId.ToString(),requestBody);
+            return new OkResult();
+        }
+
+        [FunctionName("juicygossip")]
+        public static async Task<IActionResult> juicygossip(
+           [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+           ExecutionContext context,
+           ILogger log)
+        {
 
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            ServiceBus.SendBatchMessageFIFO(context.InvocationId.ToString(),requestBody);
+            ServiceBusInfra.SendMessageTopic(context.InvocationId.ToString(), requestBody);
             return new OkResult();
         }
     }
