@@ -9,21 +9,36 @@ The most fun part with any cloud architecture styles is seeing it in action. In 
 
 - Game - The gossip game
   
-- Introduction to Message Brokering Pattern
-  - Distributed Dungeon
-    - Coordination
+  - too many information to process
+  - you're busy
+  - you're tired
+  - or maybe you're like me - I'm just getting older 
+    - the other day I couldnt remember if I ate the peanut butter sandwich or not
+  - 
+The Problem:
+  - The problem - Distributed Dungeon
+    - Hard real-time system
+      - request-response
+    - 3-tier system
+    - multiply the permutation in serverless 
+    
+    - Chain of requests
     - Decoupling 
-    - Load balancing    
+    - Load balancing  and performance   
     - Resilience
+    - Recovery
+    - Testing!
   
-  - What's Event-Driven 
-  
+The Solution:
+  - Message brokering and Event driven solve many of the challenges  
   - Message vs Events 1 min
     - Commands - high value messages
     - Msg: Producer > Consumer
     - Msg: Producer > Multiple Consumers
     - Events: Producer > Multiple subscribers    
 
+The How:  
+- Azure resources to use - let's break down each of them:
   
 - Choosing the right Azure service for messaging 
   - Storage Queue
@@ -51,7 +66,7 @@ The most fun part with any cloud architecture styles is seeing it in action. In 
     
     - Problem: What if you need several receivers of your message
     - Use Case: 2 different receivers must build the same paragraph
-    - Solution: Service Bus Topics
+    - Solution: Service Bus Topics & Subscriptions
     - Demo: Pub/Sub Service Bus   - 
     
     
@@ -61,6 +76,11 @@ The most fun part with any cloud architecture styles is seeing it in action. In 
       - 64 kb < 256 kb and 80 GB  
       - No server logs
   
+  Well-Architected Framework 
+    - Cost
+    - Performance optimization
+    - Resilience
+    - Security
     
   
 - Choosing the right Azure service for events
@@ -79,43 +99,57 @@ The most fun part with any cloud architecture styles is seeing it in action. In 
     
   - Event Hub - no demo just mention the use case for large amount of events e.g Logs, IoT
   
+   Well-Architected Framework 
+    - Cost
+    - Performance optimization
+    - Resilience
+    - Security
 
-Thinkg about 5 Pillars of Architecture - Cost, Performance, Reliability, Security, Operational 
-  - table of pricing model, latency, availability, security
   
 - How does messaging work with highly distirbuted platforms like serverless 
   - Durable function
   - Logic Apps
   - CosmosDB
+- 
+- When do I not need message queueing
   
 - Tip: How do we do it?
   - Event Modeling  
   - In-process messaging 
     - Mediator pattern
 
-- Thanks
+- Take-away
+  - A highly distributed environment like cloud 
+  - Don't spread gossip!
+
 
 ## ToDo
 
 - ~~Outline~~  
 - ~~Demo - Simple queue~~
-- Demo - FIFO SB 
+- ~~Demo - FIFO SB~~ 
 - Demo - Transactions SB
-- Demo - Pub/Sub SB Topic
+- ~~Demo - Pub/Sub SB Topic~~
 - Demo - Pub/Sub Event Grid
 - Demo - UI to display everything
 - Deck 
 - Script
-- Rehearsal 1
-- Rehearsal 2
-- Rehearsal 2
+- Rehearsal 1 - Monday
+- Rehearsal 2 - Tuesday
+- Rehearsal 3 - Wednesday
+- - Rehearsal 3 - Thursday
+  
 - Finish Learn module on message brokering
+- Finish the book
   
 ## Resources:
 https://docs.microsoft.com/en-us/learn/paths/architect-messaging-serverless/
 https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
 https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/messaging
 https://martinfowler.com/articles/201701-event-driven.html
+https://dev.to/azure/ordered-queue-processing-in-azure-functions-4h6c
+https://youtu.be/vxZ_msUgZSQ
+
 
 
 

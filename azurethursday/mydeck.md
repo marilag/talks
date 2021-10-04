@@ -3,11 +3,11 @@ marp: true
 
 ---
 # Ako po si Marilag Dimatulac
+:iphone: Twitter: @marilag
 :blue_heart: Founder & Chief Architect at [Dewise](https://www.dewise.com/)
 :cloud: Co-Founder of ulap.org
 :computer: Microsoft MVP for Azure
 :green_heart: Organizer of AZUG Manila & DK
-:iphone: Twitter: @marilag
 
 ---
 <!--  _backgroundColor: white -->
