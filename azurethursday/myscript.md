@@ -1,23 +1,26 @@
-Hope I won't ruin your appetite
+Good evening! Hope you're this meetup so far, and perhaps your dinner! I hope I'm not ruining your appetite
+
+Thanks for having me here at Azure Thursday. My name is Marilag and I'm a tech and social entrepreneur at Dewise
+
+Im an Azure cloud solution architect and a .net developer since I was about 17
+
+You can find me on Twitter but I'm not really a good a twitting
+
+
 
 **The Game** 02
 
 Let me start with a little game
-This game is called pass the message. One of my favorite childhood games when I was a kid
-So I grew up in an area, where people liked to gossip a bit
-And you can call this game a gossip game
 
-The objective of the game is to form a group of around 5 people
-Each group forms a line
-The game master then whispers a message to the first person on the line
-and the person has to pass the message to the person behind
-When the message reached the last person in the queue
-then that person need to say the message
-and the team who got the original message correctly wins
+I call it the Gossip game. We played it a lot as kids in the Philippines. Maybe you also played it here in The NEtherlands
 
-Hardly anyone wins
+The idea is that the game master passes the message to the first player, who will then forward it to the next person and so on. The last person on the queue needs to say the message out loud. The team who got the correct message wins.
+
+Which hardly ever happens, therefor it's called gossip game. 
+
 
 **Let's play** 04
+
 Let's try it here
 
 I'm going to post a message 
@@ -30,41 +33,61 @@ Dont cheat!
 
 Let's go
 
+Did anybody win?
 
 **What went wrong** 05
+
 What did we learn from the game?
 
 Messages can be tricky to handle
 
 Let's examine some of the causes. 
 
-Raise your hand if you think it's the reason why you didnt get the message 
+Insufficient memory. They say an average person can keep about 4 items in its short term memory within 30 seconds
+
+Maybe it's too much information
+
+We can remember 7 words at a time
+
+Person, woman, man, camera, TV :D
+
+Maybe you were sleepy
+
+Or you're busy watching squid game and not paying attention to this talk - which is fine :)
 
 
 **Computers aren't perfect** 06
-Apparently computers, even if it's slightly better than humans, are also susceptible to making the same blunders. Sometimes the glitch is so weird, there's no way to know what happened. I feel that quite a lot with my brain
+
+Apparently computers, even if it's slightly better than humans, are also susceptible to making the same blunders. 
+
+Sometimes the glitch is so weird, there's no way to know what happened. I feel that quite a lot with my brain
 
 **Message Brokering and Event-Driven Architecture** 06
-This talk is about looking into several ways we can solve this through message brokering patterns and event driven architecture, using Azure  
+
+This talk is about looking into several ways to address these physical system limitations,  through message brokering patterns and event driven architecture, using Azure  
   
 
-  Intro and demo of queues, service bus and event grid
+- Intro and demo of queues, service bus and event grid
 - Architectural Patterns
 - Design Pitfalls 
 
-I hope I can target different levels from the audience. My demo is written in C# and Azure function
+My demo is written in C# and Azure function
 
 It's not a niche topic, but there are rooms for discussion and deep dives into the intricacies of messaging, if we want to maximize the highly distributed nature of the Cloud
 
 **The Distributed Dungeon** 07
 
+Have you ever find yourself lost in the distributed dungeon? I have...
+
+This quote from Leslie Lampert describes that situation
+
 A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable.
 
 **Simple system** 07
 
-I'm sure most of you are familiar with distributed computing
+Most of us have only worked with distributed system, apart from the few her - don't be ashamed to admit
 
-If you're a developer, you have most likely built an application that's divided into several tiers. Typically there's a client, one or more services and a datastore
+If you're a developer, you have most likely built an application that's divided into several tier
 
 And the system works, by moving data from one tier to another. 
 
@@ -76,13 +99,14 @@ Seems pretty harmless right
 
 Not quite
 
-what if there are too many users connecting to the machine that serves the frontend 
+what if there are too many users connecting to the machine 
 
-what if the user performed several steps, and the api has to make sure that steps are processed sequentially or as a unit 
+of that you need to process their input in correct sequence
 
-or the api couldn't  understand the format of the data that it received
+what if the api couldn't  understand the format of the data that it received
 
-or what if the machine running the database system was struck my lightning
+or what if your database exploded
+
 
 **Test surface** 08
 
@@ -131,14 +155,98 @@ What's the difference
 - contain reference to a relevant entity that was changed
 - contain the event data or a reference for retrieving it from an event source
 
+If the event was triggered by a state change, it's probably interesting for subscribers to know that specific state of the entity when the evetn occurred, vs directly linking to the entity and see it's current state, which may not be the result of the event that was just received
+
+
 **Demo for Queues** 25
 
-So let's start with the services on Azure that are made for messages. Let's dig a little bit deeper to their differences
+***Azure queue***
 
-- The good old queue
+    - Problem: What if you need to accept large amount of requests and you want to do load balancing and load leveling  
+    - Use Case: Split a big paragraph and call the endpoint for each word
+    - Steps:
+      - Show Portal
+      - Call Api
+      - Display the message
+      - Show th code
+    - Observe
+      - Message not always in order
+      - Message is at least once but can me more
 
+    - Take-away
+      - Support larger messages, upto 80GB
+      - Server logs 
+      - Can use scheduling, ttl
+      - Supports poison queue
+
+***Service Bus***
+
+    FIFO
+
+    - Problem: What if you need to quarantee the order of how the message is recieved
+    - Use Case: Build the same paragraph    
+    - Demo: FIFO on service bus
+    - Steps:
+      - Show Portal
+      - Call Api
+      - Display the message
+      - Show th code 
+    
+    TRANSACTION
+
+    - Problem: What if you need to send messages that are related to each other.
+    - Use Case: All words must pass validation or the paragraph can't be created
+    - Steps:
+      - Show Portal
+      - Call Api
+      - Display the message
+      - Show th code 
+    
+    TOPICS and SUBSCRIPTIONS
+    
+    - Problem: What if you need several receivers of your message
+    - Use Case: 2 different receivers must build the same paragraph
+    - Steps:
+      - Show Portal
+      - Call Api
+      - Display the message
+      - Show th code 
+    - Observation:
+      - Topics create sub queues which functions as regular queue
+      - Subscribers connect to sub queues 
+    
+    DEAD-LETTERING
+
+    - Problem: What if you need to handle invariance within your application
+    - Use Case: 1 susbcriber sends the message to dead letter
+    - Demo: Pub/Sub Service Bus   
+      - Call Api
+      - Display the message
+      - Show th code 
+    - Obeservations:
+      - Each subscription ahs its own deadleatter not the topic
+      - Queues can automation send a message to dead letter if you turn it on for ttl
+      - DLQ message has no ttl, it stays there until it's proccessed and completed
+
+    - Takeaway on Service Bus
+      - Supports FIFO, Transactions and Pub/Sub
+      - at most once (duplicate detection)     
+      - 64 kb < 256 kb and 80 GB  
+      
 
 **Demo for Event Grid** 30
+
+    - Problem: What if you just want to notify another system that something happened in your system
+    - Use Case: Once I created a paragraph, I need to let the audience know that the story is ready
+    - Solution: Event Grid - Serverless event borker. Uses push notification style - event grid calls the client's api
+    - Demo: Push paragraph to event grid and store it as blob
+
+      Take-Away
+      - Push notification style
+      - 24 hour retry with exponential back off      
+      - at least once - demo
+      - dead-lettering on storage blob
+      - if blob storage is unavailable it will drop the event
 
 
 
@@ -148,22 +256,27 @@ So let's start with the services on Azure that are made for messages. Let's dig 
 - What's the difference between the services?
 - How about event hub?
 - What's the pricing model?
+- Disaster recovery
 
 
 **Serverless Sanctuary** 40
 
-- Poison queues
-- Dead-lettering
-- Distributed tracing
+- Self-service digital product creation 
+  - create product teams and ad groups
+  - create resource groups
+  - assign teams to resource groups
+  - notify when product has been created to setup other business functions
+  
 
 **Design Pitfalls** 41
 
-- Not defining system boundaries leading too queue mania
-- Not cataloging api's and event sources
+-  Queue of queues 
+  - limit system boundaries to a level that a normal human being can track
+  - catalog api's and event sources
+- Tracing
+  - Distributed tracing in app insight
+  - You can also write your own logs 
 
-
-**The Well Architected Framework**
-Operation
 
 
 **Devteam Toolbox** 42
