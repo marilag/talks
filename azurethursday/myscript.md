@@ -12,7 +12,7 @@ You can find me on Twitter but I'm not really a good a twitting
 
 Let me start with a little game
 
-I call it the Gossip game. We played it a lot as kids in the Philippines. Maybe you also played it here in The NEtherlands
+I call it the Gossip game. We played it a lot as kids in the Philippines. Maybe you also played it here in The Netherlands
 
 The idea is that the game master passes the message to the first player, who will then forward it to the next person and so on. The last person on the queue needs to say the message out loud. The team who got the correct message wins.
 
@@ -23,15 +23,17 @@ Which hardly ever happens, therefor it's called gossip game.
 
 Let's try it here
 
-I'm going to post a message 
+I'm going to post a message on screen
 
 and then I will delete it after 5 seconds
 
-The person who can type the exact message wins
+If you want to participate, remember as much as you can an post the story on the chat
+
+Later, after my talk, I'll find the one who got the closest to reality and give you a price
 
 Dont cheat!
 
-Let's go
+Let's start
 
 Did anybody win?
 
@@ -60,7 +62,7 @@ Or you're busy watching squid game and not paying attention to this talk - which
 
 Apparently computers, even if it's slightly better than humans, are also susceptible to making the same blunders. 
 
-Sometimes the glitch is so weird, there's no way to know what happened. I feel that quite a lot with my brain
+Sometimes the glitch is so weird, there's no way to know what happened. Like the other day - I could not remember whether I ate the peanut butter sandwich or not.
 
 **Message Brokering and Event-Driven Architecture** 06
 
@@ -73,7 +75,7 @@ This talk is about looking into several ways to address these physical system li
 
 My demo is written in C# and Azure function
 
-It's not a niche topic, but there are rooms for discussion and deep dives into the intricacies of messaging, if we want to maximize the highly distributed nature of the Cloud
+I know this is not a niche topic, messaging has been around in Azure for a long time. But I still encounter engineers having challenges with picking the tool for their distirbuted applications
 
 **The Distributed Dungeon** 07
 
@@ -311,7 +313,9 @@ If the event was triggered by a state change, it's probably interesting for subs
 
 **Design Pitfalls** 36
 
--  Queue of queues 
+- Remember all the Architectural Pillars 
+  - Performance, Reliability, Cost, Operationability, Security
+- Queue of queues 
   - limit system boundaries to a level that a normal human being can track
   - catalog api's and event sources
 - Tracing
