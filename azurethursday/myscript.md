@@ -259,16 +259,57 @@ If the event was triggered by a state change, it's probably interesting for subs
 - Disaster recovery
 
 
-**Serverless Sanctuary** 40
+**Serverless Sanctuary** 35
 
 - Self-service digital product creation 
-  - create product teams and ad groups
-  - create resource groups
-  - assign teams to resource groups
-  - notify when product has been created to setup other business functions
+  
+  This is one of the architecture we're using for a customer project. Unfortunately I'm not allowed to show the solution and the code but I can talk about the Architecture
+  
+  The system is a self-service portal for cloud engineers in an enterprise
+
+  This design implements part of a workflow for onboardin a new digital product
+
+  A bunch of things need to happend before it's completed
+
+  So from a technical perspective, it's not so different implementing any workdlow for handling the lifecycle of any entity
+
+  We start with a call from the User
+  
+  Since it's a long running process, that can possibly span days due to an approval, we implemented it as a durable function
+
+  The orchestraot triggers the first activity which creates the domain entity in the database
+
+  then it triggers the waiting for approval and will continue as soon it is approved. There's an expiration
+
+  Then after the approval, there are just a series of steps to execute, create ad groups, create resources, assign groups to resources, update the entity's state
+
+  When all the steps haave succeeded, the orchestration completes and everyone is happy
+
+  Let's examine a few architectural elements here
+
+  We put a queue between the client and function to manage the load for the orchestration 
+
+  Each activity are command handlers
+
+  When the command succeeds, it publishes an internal event, captured by an internal handler that triggers the next activity, hence command
+
+  This uses in-process message brokering with the mediator pattern
+
+  If we need to triggers several parallel activities we simply subscribe multuple handlers (internally) for same event that can invoke multiple commands
+
+  We also store every internal event in an event store later for logging or other business logic
+
+  If an error occurs in any of the command handling, we handle that error, which checks where in the process you are, retry, roll-back or move forward depending on the scenario
+
+  If it's a fatal error, we close the orchestration 
+
+  If you notice, we expose the individual activities as an api, so it can also be retriggered on another session, if necessary. In case of recovering from a fatal error
+
+  If things are successful, the orchestration completes and trigger a final internal event notification. The handler then publishes an external notification posted on Event Grid where other bounded context from different services are subscribed
+
   
 
-**Design Pitfalls** 41
+**Design Pitfalls** 36
 
 -  Queue of queues 
   - limit system boundaries to a level that a normal human being can track
@@ -279,9 +320,12 @@ If the event was triggered by a state change, it's probably interesting for subs
 
 
 
-**Devteam Toolbox** 42
+**Devteam Toolbox** 38
 
-**Final take-away** 43
+We use event modeling - link
+We use mediator pattern
+
+**Final take-away** 40
 
 **Closing**
 And that's the end of my session
