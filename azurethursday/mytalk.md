@@ -36,6 +36,10 @@ The Solution:
     - Msg: Producer > Consumer
     - Msg: Producer > Multiple Consumers
     - Events: Producer > Multiple subscribers    
+      - should it contain data all the the data
+      - it can contain a resource endpoint to retrieve more data about the event
+      - and return the specific about the particular event and not just to the current state of the data
+      - 
 
 The How:  
 - Azure resources to use - let's break down each of them:
@@ -53,6 +57,8 @@ The How:
     - Notes: can use scheduling, ttl, supports poison queue
  
   - Service Bus
+  - 
+    - FIFO  
     - Problem: What if you need to quarantee the order of how the message is recieved
     - Use Case: Build the same paragraph
     - Solution: Service Bus - enteprise grade message broker system. Use pull - client polls  
@@ -75,13 +81,7 @@ The How:
       - at most once (duplicate detection)     
       - 64 kb < 256 kb and 80 GB  
       - No server logs
-  
-  Well-Architected Framework 
-    - Cost
-    - Performance optimization
-    - Resilience
-    - Security
-    
+     
   
 - Choosing the right Azure service for events
   - What about events
@@ -100,6 +100,14 @@ The How:
   - Event Hub - no demo just mention the use case for large amount of events e.g Logs, IoT
   
    Well-Architected Framework 
+    
+    - Operationability
+      - How many queues and event grids should I make
+        - depends on your application design
+          - in my experience use queues to connect ologic within the scope of a feature or in ddd a bounded context
+          - 
+      - Telemetry correlation
+      - https://docs.microsoft.com/en-us/azure/azure-monitor/app/custom-operations-tracking
     - Cost
     - Performance optimization
     - Resilience
@@ -130,15 +138,19 @@ The How:
 - ~~Demo - FIFO SB~~ 
 - Demo - Transactions SB
 - ~~Demo - Pub/Sub SB Topic~~
-- Demo - Pub/Sub Event Grid
+- ~~Demo - Pub/Sub Event Grid~~
+- Demo - put everything together as azure durable function
 - Demo - UI to display everything
-- Deck 
-- Script
-- Rehearsal 1 - Monday
+- Deck - Tuesday
+  - message and events diagram
+  - serverless diagram
+  - Comparison table
+  - qr code and shortlink to github
+  - twitter handle
+- ~~Script - Monday~~
 - Rehearsal 2 - Tuesday
 - Rehearsal 3 - Wednesday
-- - Rehearsal 3 - Thursday
-  
+- Rehearsal 3 - Thursday
 - Finish Learn module on message brokering
 - Finish the book
   
@@ -149,6 +161,10 @@ https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/mes
 https://martinfowler.com/articles/201701-event-driven.html
 https://dev.to/azure/ordered-queue-processing-in-azure-functions-4h6c
 https://youtu.be/vxZ_msUgZSQ
+https://azure.microsoft.com/en-us/blog/a-technical-overview-of-azure-cosmos-db/
+https://www.facebook.com/zuck/posts/10113957526871061
+https://engineering.fb.com/2021/10/04/networking-traffic/outage/
+https://docs.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account?toc=/azure/storage/blobs/toc.json
 
 
 

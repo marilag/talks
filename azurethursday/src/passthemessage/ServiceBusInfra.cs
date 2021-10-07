@@ -16,45 +16,7 @@ namespace passthemessage
         static string queueName = "gossips";
         static ServiceBusSender sender;
 
-        public async static void SendBatchMessageFIFO(string sessionId, string message)
-        {
-
-            await using var client = new ServiceBusClient(connectionString);
-            sender = client.CreateSender(queueName);
-
-            // create a batch 
-            using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
-
-            var messageblocks = message.Split();
-            var count = messageblocks.Length;
-
-            for (int i = 0; i < count; i++)
-            {
-                var sbmessage = new ServiceBusMessage(messageblocks[i])
-                {
-                    SessionId = sessionId
-                };
-
-                if (!messageBatch.TryAddMessage(sbmessage))
-                {
-                    // if it is too large for the batch
-                    throw new Exception($"The message {i} is too large to fit in the batch.");
-                }
-            }
-
-            try
-            {
-
-                await sender.SendMessagesAsync(messageBatch);
-
-            }
-            finally
-            {
-
-                await sender.DisposeAsync();
-
-            }
-        }
+       
         public async static void SendMessageFIFO(string sessionId, string message)
         {
 
@@ -62,11 +24,9 @@ namespace passthemessage
             sender = client.CreateSender(queueName);
 
 
-
             var messageblocks = message.Split();
+
             var count = messageblocks.Length;
-
-
 
             try
             {
@@ -193,6 +153,46 @@ namespace passthemessage
             }
         }
 
+ public async static void SendBatchMessageFIFO(string sessionId, string message)
+        {
+
+            await using var client = new ServiceBusClient(connectionString);
+            sender = client.CreateSender(queueName);
+
+            // create a batch 
+            using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
+
+            var messageblocks = message.Split(); 
+                
+            var count = messageblocks.Length;
+
+            for (int i = 0; i < count; i++)
+            {
+                var sbmessage = new ServiceBusMessage(messageblocks[i])
+                {
+                    SessionId = sessionId
+                };
+
+                if (!messageBatch.TryAddMessage(sbmessage))
+                {
+                    // if it is too large for the batch
+                    throw new Exception($"The message {i} is too large to fit in the batch.");
+                }
+            }
+
+            try
+            {
+
+                await sender.SendMessagesAsync(messageBatch);
+
+            }
+            finally
+            {
+
+                await sender.DisposeAsync();
+
+            }
+        }
 
 
     }

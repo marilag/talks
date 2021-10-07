@@ -19,7 +19,7 @@ namespace passthemessage
             this.eventGridService = eventGridService;
         }
 
-        [FunctionName("EventGridProducer")]
+        [FunctionName("events")]
         public  async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous,  "post", Route = null)] HttpRequest req,
             ILogger log)
