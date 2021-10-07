@@ -15,49 +15,11 @@ namespace passthemessage
     public  class ServiceBusReceive
          
     {
-        //    [FunctionName("ServiceBusFifo")]
-        //    public  async Task Run([ServiceBusTrigger("gossips", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
-        //    {
-        //        string messageBody = Encoding.UTF8.GetString(message.Body);
-        //        await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
-        //        Console.WriteLine($"{messageBody}");
-
-
-        //    }
-
-        [FunctionName("ServiceBusReceiveTransaction")]
-        public static async Task Run([ServiceBusTrigger("gossips", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
+        [FunctionName("ServiceBusFifo")]
+        public async Task Run([ServiceBusTrigger("gossips", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
         {
-            log.LogInformation("Calling event");
-            string connectionString = "Endpoint=sb://azurethursday2021p.servicebus.windows.net/;SharedAccessKeyName=app;SharedAccessKey=wfes74Xwh6MKP0sVs1jhPhppW1M5Op0KnJ5nqX4MClk=";
-            string queueName = "cheesygossips";
-            ServiceBusSender sender;
-
             string messageBody = Encoding.UTF8.GetString(message.Body);
-
-            await using var client = new ServiceBusClient(connectionString);
-
-            sender = client.CreateSender(queueName);
-
-            try
-            {
-                using (var ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
-                {
-
-                    await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
-                    //await sender.SendMessageAsync(new ServiceBusMessage($"cheesy {messageBody}")
-                    //{
-                    //    SessionId = System.Guid.NewGuid().ToString()
-                    //});
-                    ts.Complete();
-                }
-            }
-            finally
-            {
-
-                await sender.DisposeAsync();
-
-            }
+            await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
             Console.WriteLine($"{messageBody}");
 
         }
@@ -66,8 +28,10 @@ namespace passthemessage
         public  async Task ServiceBusJuicyGossips1([ServiceBusTrigger("juicygossips", "subscription1", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
         {
             string messageBody = Encoding.UTF8.GetString(message.Body);
+
             await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
-            Console.WriteLine($"{messageBody}");
+
+            Console.WriteLine($"ServiceBusJuicyGossips1 : {messageBody}");
 
 
         }
@@ -76,11 +40,35 @@ namespace passthemessage
         public  async Task ServiceBusJuicyGossips2([ServiceBusTrigger("juicygossips", "subscription2", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
         {
             string messageBody = Encoding.UTF8.GetString(message.Body);
-            await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
-            Console.WriteLine($"{messageBody}");
 
+            await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
+
+            Console.WriteLine($"ServiceBusJuicyGossips2 : {messageBody}");
 
         }
+/* 
+        [FunctionName("ServiceBusJuicyGossips3")]
+        public async Task ServiceBusJuicyGossips3([ServiceBusTrigger("juicygossips", "subscription3", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
+        {
+            string messageBody = Encoding.UTF8.GetString(message.Body);
+
+            await messageReceiver.DeadLetterAsync(message.SystemProperties.LockToken);
+
+            Console.WriteLine($"ServiceBusJuicyGossips3 : {messageBody}");
+
+        }
+
+        [FunctionName("ServiceBusJuicyGossipsDead")]
+        public async Task ServiceBusJuicyDeadLetter([ServiceBusTrigger("juicygossips", "subscription3/$deadletterqueue", Connection = "ServiceBusConnStr")] Message message, MessageReceiver messageReceiver, ILogger log)
+        {
+            string messageBody = Encoding.UTF8.GetString(message.Body);
+            
+
+            await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
+
+            Console.WriteLine($"DeadLetter Alert! : {messageBody}");
+
+        } */
 
     }
 }
