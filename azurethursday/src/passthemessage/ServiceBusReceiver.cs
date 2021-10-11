@@ -18,7 +18,7 @@ namespace passthemessage
         [FunctionName("ServiceBusFifo")]
         public async Task Run([ServiceBusTrigger("gossips", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
         {
-            string messageBody = Encoding.UTF8.GetString(message.Body);
+            string messageBody = Encoding.UTF8.GetString(message.Body);            
             await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
             Console.WriteLine($"{messageBody}");
 
@@ -46,7 +46,7 @@ namespace passthemessage
             Console.WriteLine($"ServiceBusJuicyGossips2 : {messageBody}");
 
         }
-/* 
+
         [FunctionName("ServiceBusJuicyGossips3")]
         public async Task ServiceBusJuicyGossips3([ServiceBusTrigger("juicygossips", "subscription3", Connection = "ServiceBusConnStr", IsSessionsEnabled = true)] Message message, MessageReceiver messageReceiver, ILogger log)
         {
@@ -68,7 +68,7 @@ namespace passthemessage
 
             Console.WriteLine($"DeadLetter Alert! : {messageBody}");
 
-        } */
+        }
 
     }
 }

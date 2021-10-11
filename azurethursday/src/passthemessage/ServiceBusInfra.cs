@@ -12,7 +12,7 @@ namespace passthemessage
     {
 
 
-        static string connectionString = "Endpoint=sb://azurethursday2021p.servicebus.windows.net/;SharedAccessKeyName=app;SharedAccessKey=wfes74Xwh6MKP0sVs1jhPhppW1M5Op0KnJ5nqX4MClk=";
+        static string connectionString = "connectionstring here";
         static string queueName = "gossips";
         static ServiceBusSender sender;
 
