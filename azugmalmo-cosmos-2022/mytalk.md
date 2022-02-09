@@ -1,6 +1,6 @@
 # Secrets of the Cosmos 
 
- Azure CosmosDB is known for its supers powers. Multi-model, highly-available and lightning fast. But before launching into the deep space of this extraordinary cloud database, let us stay grounded and talk about the fundamentals. What are the common pitfalls in modeling data? How do you design and optimize your partitioning strategy. What are the tradeoffs to consider as the application grows and relationships between entities become more complex.Let's have an open and honest conversation around our data persistence choices and how we can best avoid the black hole of cloud database conundrum
+ Azure CosmosDB is known for its supers powers. Multi-model, highly-available and lightning fast. But before launching into the deep space of this extraordinary cloud database, let us stay grounded and talk about the fundamentals. What are the common pitfalls in modeling data? How do you design and optimize your partitioning strategy? What are the tradeoffs to consider as the application grows and relationships between entities become more complex? Let's have an open and honest conversation around our data persistence choices and how we can best avoid the black hole of cloud database conundrum.
 
  ## Bio
 [Link to My Photo](../cloudskwela2021/Marilag.jpg)
